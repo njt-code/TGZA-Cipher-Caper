@@ -1,3 +1,5 @@
 *.json
 *.sqlite
 /.vs
+/.vs/TGZA-Cipher-Caper/v17/.wsuo
+/.vs/slnx.sqlite
