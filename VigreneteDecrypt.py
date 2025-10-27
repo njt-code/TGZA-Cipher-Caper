@@ -118,11 +118,10 @@ def englishComparison(plainText): #scores it, Higher values means closer to engl
     return score #Highest score is most likely, and is chosen for the closensss to bi, tri, and 100 common english words, the chi value is ALWAYS GOING TO BE THE HIGHEST SCORE INITIALLY, this just ranks the output plaintext for its englishness
         
 
-def keyVariationToEng(finalKey, cipherText): #final key is the CHI guessed key, with CHI being closeness to original frequency, cipherText 
-    #is the original input, this is using the base decrypt function, which shifts it based on the chi key, and instead tests a bunch of variations in the key by shifting -3 to 3, just arbitrary
-    # shifting them all again to something more would be not using the chi, and instead brute forcing the entire ciphertext, this does far fewer tests, hard capped 50
-    #it by english
-    #and
+def keyVariationToEng(finalKey, cipherText): #Initially, I was thinking, certainkeylengths and length of ciphertexts, produce inconsistant results, I wanted to score and rate post chi key shifts deviating from the original just slightly
+    # but I ran into an issue, the scoring system is inherently flawed, scoring it based on if its close to english, doesnt quite work, as different keyshifts can produce more "like" english text than the
+    #original chi-guessed plaintext, I kind of sapped it to be a certainty score, where approx 150 is the thershold for it being MOSTLY correct, any lower and its difficult, anything higher, approaching 200, is better
+ 
 
     bestKey = finalKey
     bestScore = englishComparison(Decrypt(cipherText, finalKey))
@@ -130,9 +129,9 @@ def keyVariationToEng(finalKey, cipherText): #final key is the CHI guessed key, 
     print('-'*5 + "KEY VARIATION CHECK" + '-'*5)
     print('\nInitial Chi Key:', finalKey, '\nInitial Score: ',bestScore)
     if bestScore < 100:
-        print("\nScores of > 150, mean that the outputted plaintext is less close to english ")
+        print("\nScores of < 150, mean that the outputted plaintext is UNCERTAIN ")
     else: 
-        print("\nHigher scores of > 150, Usually mean its close to english")
+        print("\nHigher scores of > 150, Usually means HIGHER CERTAINTY")
     for i in range(len(finalKey)):
         OGChar = finalKey[i]
         OGIndex = LETTERS.index(OGChar)
@@ -142,7 +141,7 @@ def keyVariationToEng(finalKey, cipherText): #final key is the CHI guessed key, 
             testChar = LETTERS[testIndex]
             testKey = finalKey[:i] + testChar + finalKey[i+1:]
 
-            testDecrypt = Decrypt(cipherText, testKey)
+            testDecrypt = Decrypt(cipherText, testKey) #it still checks variance scores, but its negligible, I have the weights above, tinkering with them, scoring certain things higher, wildly throws off the best guess, as it trys to correct to the entire list of bigrams/trigrams/words
             score = englishComparison(testDecrypt)
             if score > bestScore:
                 bestScore = score
