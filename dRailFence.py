@@ -1,5 +1,5 @@
 
-# Usage: python3 railfence_decoder.py "CIPHERTEXT" 3
+# Usage: python3 dRailFence.py "CIPHERTEXT" 3
 
 import sys
 
@@ -42,7 +42,7 @@ def railfence(ciphertext, rails):
 # --- MAIN PROGRAM ---
 
 if len(sys.argv) < 3:
-    print("Usage: python3 railfence_decoder.py \"CIPHERTEXT\" <RAILS>")
+    print("Usage: python3 dRailFence.py \"CIPHERTEXT\" <RAILS>")
     sys.exit(1)
 
 ciphertext = sys.argv[1]

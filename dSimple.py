@@ -1,5 +1,5 @@
 
-# Usage: python3 substitution_decoder.py "CIPHERTEXT" "KEY"
+# Usage: python3 dSimple.py "CIPHERTEXT" "KEY"
 
 import sys
 import string
@@ -19,7 +19,7 @@ def substitution(ciphertext, key):
 
 
 if len(sys.argv) < 3:
-    print("Usage: python3 substitution_decoder.py \"CIPHERTEXT\" \"KEY\"")
+    print("Usage: python3 dSimple.py \"CIPHERTEXT\" \"KEY\"")
     sys.exit(1)
 
 ciphertext = sys.argv[1]

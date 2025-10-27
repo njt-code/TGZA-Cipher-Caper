@@ -1,5 +1,5 @@
 
-# Usage: python3 playfair_decoder.py "CIPHERTEXT" "KEYWORD"
+# Usage: python3 dPlayfair.py "CIPHERTEXT" "KEYWORD"
 
 import sys
 
@@ -58,7 +58,7 @@ def playfair(cipher, key):
     return plaintext
 
 if len(sys.argv) < 3:
-    print("Usage: python3 playfair_decoder.py \"CIPHERTEXT\" \"KEYWORD\"")
+    print("Usage: python3 dPlayfair.py \"CIPHERTEXT\" \"KEYWORD\"")
     sys.exit(1)
 
 ciphertext = sys.argv[1]

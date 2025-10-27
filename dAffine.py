@@ -1,5 +1,5 @@
 
-# Usage: python3 affine_decoder.py "CIPHERTEXT" a b
+# Usage: python3 dAffine.py "CIPHERTEXT" a b
 
 import sys
 import string
@@ -30,7 +30,7 @@ def decrypt_affine(ciphertext, a, b):
     return plaintext
 
 if len(sys.argv) < 4:
-    print("Usage: python3 affine_decoder.py \"CIPHERTEXT\" a b")
+    print("Usage: python3 dAffine.py \"CIPHERTEXT\" a b")
     sys.exit(1)
 
 

@@ -1,5 +1,5 @@
 
-# Usage: python3 base64_decoder.py "QmFzZTY0IGlzIGNvb2wh"
+# Usage: python3 dBase.py "QmFzZTY0IGlzIGNvb2wh"
 
 import sys
 import base64
@@ -13,7 +13,7 @@ def base64(text):
 
 
 if len(sys.argv) < 2:
-    print("Usage: python3 base64_decoder.py \"CIPHERTEXT\"")
+    print("Usage: python3 dBase.py \"CIPHERTEXT\"")
     sys.exit(1)
 
 ciphertext = sys.argv[1]

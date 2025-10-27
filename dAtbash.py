@@ -1,5 +1,5 @@
 
-# Usage: python3 atbash_decoder.py "CIPHERTEXT"
+# Usage: python3 dAtbash.py "CIPHERTEXT"
 
 import sys
 import string
@@ -19,7 +19,7 @@ def atbash(ciphertext):
 
 
 if len(sys.argv) < 2:
-    print("Usage: python3 atbash_decoder.py \"CIPHERTEXT\"")
+    print("Usage: python3 dAtbash.py \"CIPHERTEXT\"")
     sys.exit(1)
 
 ciphertext = sys.argv[1]
