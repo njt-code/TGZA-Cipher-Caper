@@ -1,2 +1,2 @@
-Key: KEY
-Encoded: LNXPIEATT
+Key: abcd
+Encoded: SENPRIMDA

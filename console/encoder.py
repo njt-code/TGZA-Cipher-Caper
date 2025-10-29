@@ -1,10 +1,19 @@
-# Usage: python3 .\encoder\encoder.py "PLAINTEXT" "KEY"
+# Usage: python3 encoder.py "PLAINTEXT" "KEY"
 
 import sys
 import math
 
+def validate_key(key):
+    if len(key) > 7:
+        raise ValueError("Key must be 7 characters or less")
+    if len(set(key)) != len(key):
+        raise ValueError("Key must contain unique characters")
+    return True
+
 def encrypt(plaintext, key):
-    plaintext = plaintext.replace(" ", "").upper()
+    validate_key(key)
+    # Remove spaces and commas, and convert to uppercase
+    plaintext = plaintext.replace(" ", "").replace(",", "").upper()
     num_cols = len(key)
     num_rows = math.ceil(len(plaintext) / num_cols)
 
@@ -17,7 +26,6 @@ def encrypt(plaintext, key):
                 index += 1
 
     keyorder = sorted(list(key))
-
     ciphertext = ""
     for k in keyorder:
         col_index = key.index(k)
@@ -28,7 +36,7 @@ def encrypt(plaintext, key):
     return ciphertext
 
 if len(sys.argv) < 3:
-    print("Usage: python3 .\encoder\encoder.py \"PLAINTEXT\" \"KEY\"")
+    print('Usage: python3 encoder.py "PLAINTEXT" "KEY"')
     sys.exit(1)
 
 plaintext = sys.argv[1]
