@@ -83,9 +83,9 @@ def Decrypt(cipherText, finalKey):
     keyL = len(finalKey) 
     for i, char in enumerate(cipherText): #Traveres the entire length of the ciphertext string
         if char in LETTERS: # checks if the chr is within the letters string
-            keyChar = finalKey[i % keyL] #These blocks right here, cause the aches to implement, the goal is taking the new final key, and applying the shift to the ciphertext, to get plaintext
+            keyChar = finalKey[i % keyL] #These blocks right here, cause the aches to implement, the goal is taking the new final key, it takes the first chr of the string, and in this instance assigns it to keychar, and travels over each chr of the final key to the final ciphertext, applying the shift
             shift = LETTERS.index(keyChar) # index takes the number from that position
-            tempInd = (LETTERS.index(char) - shift) % 26
+            tempInd = (LETTERS.index(char) - shift) % 26 # The same little trick, where it repeats
             plainText.append(LETTERS[tempInd])
         else:
             plainText.append(char)
