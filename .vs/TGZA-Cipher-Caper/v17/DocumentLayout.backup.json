@@ -7,30 +7,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VigreneteDecrypt.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|B:\\Ciphey-Staging\\vigenere_analysis.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\README.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\Main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\Input_example.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Input_example.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\source\\repos\\TGZA-Cipher-Caper\\README.md||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\TkinterExample.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TkinterExample.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,12 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "vigenere_analysis.py",
-              "DocumentMoniker": "B:\\Ciphey-Staging\\vigenere_analysis.py",
-              "ToolTip": "B:\\Ciphey-Staging\\vigenere_analysis.py",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAASAAAAAAAAAA==",
+              "Title": "ColumnarProg.py",
+              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py",
+              "RelativeDocumentMoniker": "ColumnarProg.py",
+              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py",
+              "RelativeToolTip": "ColumnarProg.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-20T21:04:51.134Z",
+              "WhenOpened": "2025-10-30T23:08:16.843Z",
               "EditorCaption": ""
             },
             {
@@ -61,82 +41,10 @@
               "RelativeDocumentMoniker": "VigreneteDecrypt.py",
               "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\VigreneteDecrypt.py",
               "RelativeToolTip": "VigreneteDecrypt.py",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAI0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-20T20:54:59.3Z",
+              "WhenOpened": "2025-10-29T18:34:29.01Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "README.txt",
-              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\README.txt",
-              "RelativeDocumentMoniker": "README.txt",
-              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\README.txt",
-              "RelativeToolTip": "README.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-10-19T03:47:41.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-19T00:22:03.995Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Input_example.py",
-              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\Input_example.py",
-              "RelativeDocumentMoniker": "Input_example.py",
-              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\Input_example.py",
-              "RelativeToolTip": "Input_example.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-19T00:22:04.091Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TkinterExample.py",
-              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\TkinterExample.py",
-              "RelativeDocumentMoniker": "TkinterExample.py",
-              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\TkinterExample.py",
-              "RelativeToolTip": "TkinterExample.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-19T00:22:04.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Main.py",
-              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\Main.py",
-              "RelativeDocumentMoniker": "Main.py",
-              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\Main.py",
-              "RelativeToolTip": "Main.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-19T00:22:04.095Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\brend\\source\\repos\\TGZA-Cipher-Caper\\README.md",
-              "RelativeDocumentMoniker": "..\\..\\..\\source\\repos\\TGZA-Cipher-Caper\\README.md",
-              "ToolTip": "C:\\Users\\brend\\source\\repos\\TGZA-Cipher-Caper\\README.md",
-              "RelativeToolTip": "..\\..\\..\\source\\repos\\TGZA-Cipher-Caper\\README.md",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-13T16:08:26.771Z"
             }
           ]
         }

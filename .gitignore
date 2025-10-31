@@ -1,1 +1,7 @@
-*.json *.sqlite .vs/TGZA-Cipher-Caper/v17 .vs/ *.suo *.user *.userosscache *.sln.docstates *.VC.db *.vscode/ *.vsidx .slnx.sqlite *.dbmdl pycache/ *.py[cod] env/ venv/ ENV/ build/ dist/ *.egg-info/
+*.json
+*.sqlite
+/.vs
+/.vs/TGZA-Cipher-Caper/v17/.wsuo
+/.vs/slnx.sqlite
+.vs/TGZA-Cipher-Caper/v17/DocumentLayout.backup.json
+.vs/TGZA-Cipher-Caper/v17/DocumentLayout.json
