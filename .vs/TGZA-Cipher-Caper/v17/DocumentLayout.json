@@ -3,18 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\VigreneteDecrypt.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VigreneteDecrypt.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|B:\\Ciphey-Staging\\Columnar_analysis.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\AppData\\Local\\Temp\\38e73e18-da7e-4057-b9f3-dabbd8b63b5f_TGZA-Cipher-Caper-tdev.zip.b5f\\TGZA-Cipher-Caper-tdev\\encoder\\encoder.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,56 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ColumnarProg.py",
               "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py",
               "RelativeDocumentMoniker": "ColumnarProg.py",
               "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py",
               "RelativeToolTip": "ColumnarProg.py",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC8AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-10-30T23:08:16.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Columnar_analysis.py",
-              "DocumentMoniker": "B:\\Ciphey-Staging\\Columnar_analysis.py",
-              "ToolTip": "B:\\Ciphey-Staging\\Columnar_analysis.py",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAALIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-30T01:23:45.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "VigreneteDecrypt.py",
               "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\VigreneteDecrypt.py",
               "RelativeDocumentMoniker": "VigreneteDecrypt.py",
               "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\VigreneteDecrypt.py",
               "RelativeToolTip": "VigreneteDecrypt.py",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAI0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-10-29T18:34:29.01Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "encoder.py",
-              "DocumentMoniker": "C:\\Users\\brend\\AppData\\Local\\Temp\\38e73e18-da7e-4057-b9f3-dabbd8b63b5f_TGZA-Cipher-Caper-tdev.zip.b5f\\TGZA-Cipher-Caper-tdev\\encoder\\encoder.py",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\38e73e18-da7e-4057-b9f3-dabbd8b63b5f_TGZA-Cipher-Caper-tdev.zip.b5f\\TGZA-Cipher-Caper-tdev\\encoder\\encoder.py",
-              "ToolTip": "C:\\Users\\brend\\AppData\\Local\\Temp\\38e73e18-da7e-4057-b9f3-dabbd8b63b5f_TGZA-Cipher-Caper-tdev.zip.b5f\\TGZA-Cipher-Caper-tdev\\encoder\\encoder.py [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\38e73e18-da7e-4057-b9f3-dabbd8b63b5f_TGZA-Cipher-Caper-tdev.zip.b5f\\TGZA-Cipher-Caper-tdev\\encoder\\encoder.py [Read Only]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-27T05:46:03.913Z",
-              "EditorCaption": " [Read Only]"
             }
           ]
         }

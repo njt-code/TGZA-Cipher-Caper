@@ -39,26 +39,32 @@ TRIGRAMS = {
     'HES': 0.24, 'VER': 0.24, 'HIS': 0.24, 'OFT': 0.22, 'ITH': 0.21,
     'FTH': 0.21, 'STH': 0.21, 'OTH': 0.21, 'RES': 0.21, 'ONT': 0.20
     }
+IMPOSSIBLE = {"bk", "fq", "jc", "jt", "mj", "qh", "qx", "vj", "wz", "zh", "bq", "fv", "jd", "jv", "mq", "qj", "qy", "vk", "xb", "zj",
+             "bx", "fx", "jf", "jw", "mx", "qk", "qz", "vm", "xg", "zn", "cb", "fz", "jg", "jx", "mz", "ql", "sx", "vn", "xj", "zq", 
+             "cf", "gq", "jh", "jy", "pq", "qm", "sz", "vp", "xk", "zr", "cg", "gv", "jk", "jz", "pv", "qn", "tq", "vt", "xv", "zs",
+            "cj", "cp", "hk", "jl", "kq", "px", "qo", "tx", "vb", "vw", "yq", "cv", "cw", "hv", "jn", "kv", "qb", "qr", "vc", "vx",
+             "yv", "cx", "hz", "jp", "kz", "qd", "qs", "vd", "vz", "yz", "dx", "iy", "jr", "lx", "qe", "qt", "vf", "wq", "zb", "fk", 
+             "jb", "js", "mg", "qg", "qw", "vg", "wx", "zg"
+    }
 def getLetterCount(cipherText):
     letterCount = {ch: 0 for ch in LETTERS} #Blank table of Str A-Z set to 0, didnt know but on stack exchange for dictonaries like this, you can actuall run for loops
     letterTotal = 0 # used in calculating the frequency
-    for character in cipherText: # Char is temp variable, this loop default loops every character in a string until the string ends, and returns the chr value individually each loop to the new var
-        if character in LETTERS: #the value of chr is assigned each loop, but before it overwrites, we check if its within the LETTERS string, if so, +1 to that location
+    for character in cipherText: 
+        if character in LETTERS: 
             letterCount[character]+=1 
             letterTotal += 1
-    freq = {} #blank dictonary, copying the chr and a modified frequency total by lettertotal
+    freq = {} 
     for letter in LETTERS:
         if letterTotal > 0:
             freq[letter] = round((letterCount[letter] / letterTotal) * 100,3)
         else:
             freq[letter] = 0
-    return freq, letterCount, letterTotal # returns 3 values, for manual testing, but it doesnt need to return all that besides freq
+    return freq, letterCount, letterTotal 
 
 def getChiValue(columnFreq, columnLength):
     BShift = 0
-    BChi = float('inf') #I am not good at implementing statistical math analysis, This function is basically a black box to me, I dont understand statistics yet, all I know is 
-    #that this will return a chi-value or closeness to two different frequencies, and the more its off, the less likely it will be, and the loop at the bottom is calculating the chi value of each column 26 times, and whichever chivalue is lower, is the new best chi value, 
-    #and whichever letter being shifted by ie Shift, whichever shift produced the lowest chi value is returned as the likely key shift int
+    BChi = float('inf') 
+    
     
     for shift in range(26):
         chi = 0
@@ -94,7 +100,6 @@ def Decrypt(cipherText, finalKey):
 def englishComparison(plainText): #scores it, Higher values means closer to english, highest score
     score = 0
     text = plainText.upper()
-
     words = text.split()
     for word in words:
         clean = ''.join(filter(str.isalpha,word))
@@ -103,12 +108,16 @@ def englishComparison(plainText): #scores it, Higher values means closer to engl
     for i in range(len(text) - 1):
         bigram = text[i:i+2]
         if bigram in BIGRAMS:
-            score += BIGRAMS[bigram] * 5
+            score += BIGRAMS[bigram] * 2
     for i in range(len(text) - 2):
         trigram = text[i:i+3]
         if trigram in TRIGRAMS:
-            score += TRIGRAMS[trigram] * 10
+            score += TRIGRAMS[trigram] * 5
+ 
+
+
     freq,_,total = getLetterCount(text)
+
     if total > 0:
         for letter in LETTERS:
             exp = engFreq[letter]
@@ -118,9 +127,7 @@ def englishComparison(plainText): #scores it, Higher values means closer to engl
     return score #Highest score is most likely, and is chosen for the closensss to bi, tri, and 100 common english words, the chi value is ALWAYS GOING TO BE THE HIGHEST SCORE INITIALLY, this just ranks the output plaintext for its englishness
         
 
-def keyVariationToEng(finalKey, cipherText): #Initially, I was thinking, certainkeylengths and length of ciphertexts, produce inconsistant results, I wanted to score and rate post chi key shifts deviating from the original just slightly
-    # but I ran into an issue, the scoring system is inherently flawed, scoring it based on if its close to english, doesnt quite work, as different keyshifts can produce more "like" english text than the
-    #original chi-guessed plaintext, I kind of sapped it to be a certainty score, where approx 150 is the thershold for it being MOSTLY correct, any lower and its difficult, anything higher, approaching 200, is better
+def keyVariationToEng(finalKey, cipherText): 
  
 
     bestKey = finalKey
@@ -146,7 +153,7 @@ def keyVariationToEng(finalKey, cipherText): #Initially, I was thinking, certain
             if score > bestScore:
                 bestScore = score
                 bestKey = testKey
-    return bestKey, bestScore
+    return bestKey, round(bestScore,3)
 
 def getBestKeyDecrypt(finalKey,cipherText):
     bestKey, bestScore = keyVariationToEng(finalKey, cipherText)

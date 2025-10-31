@@ -2,16 +2,20 @@ import base64
 import math
 def encodeBase64(plaintext):
     return base64.b64encode(plaintext.encode('utf-8')).decode('utf-8')
+
 def decodeBase64(encodedMsg):
     return base64.b64decode(encodedMsg.encode('utf-8')).decode('utf-8')
+
 def padText(plaintext,key,pad='X'):
     keyLength = len(key)
     remainder = len(plaintext) % keyLength
     if remainder != 0:
         plaintext += pad * (keyLength - remainder)
     return plaintext
+
 def getOrd(key):
     return sorted(range(len(key)), key=lambda x: key[x])
+
 def encryptColumnar(plaintext, key):
     plaintext = plaintext.replace(" ", "").upper()
     plaintext = padText(plaintext, key)
@@ -35,6 +39,7 @@ def encryptColumnar(plaintext, key):
                 cipherText += grid[r][k]
 
     return encodeBase64(cipherText)
+
 def decryptColumnar(cipherText, key):
     cipherText = decodeBase64(cipherText)
     cipherText = cipherText.upper()
