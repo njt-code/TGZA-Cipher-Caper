@@ -2,6 +2,9 @@
 #The idea is you compare the two frequency distributions, and shift/guess the letter to the corresponding peak, E of 12.7 here, most common letter, will have the 
 #highest peak in the new distribution
 from collections import Counter
+import heapq
+import itertools
+import crackVigrenere, detectEnglish, FrequencyOfMsg
 engFreq = {
      'A': 8.2,'B': 1.5,  'C' : 2.8,  'D' : 4.3 , 'E' : 12.7, 'F' : 2.2, 'G' : 2.0, 'H' : 6.1,
      'I' : 7.0, 'J' : 0.15, 'K' : 0.77,  'L' : 4.0, 'M' : 2.4, 'N' : 6.7, 'O' : 7.5, 'P' : 1.9,
@@ -18,7 +21,8 @@ engWords = { 'the','be','to','of','and','a','in','that','have','I',
     'people','into','year','your','good','some','could','them','see','other',
     'than','then','now','look','only','come','its','over','think','also',
     'back','after','use','two','how','our','work','first','well','way',
-    'even','new','want','because','any','these','give','day','most','us','once'
+    'even','new','want','because','any','these','give','day','most','us','once','sweet','decay','brain','brains',
+    'town'
     }
 BIGRAMS = {
     'th': 3.56, 'he': 3.07, 'in': 2.43, 'er': 2.05, 'an': 1.99,
@@ -56,7 +60,7 @@ def getLetterCount(cipherText):
     freq = {} 
     for letter in LETTERS:
         if letterTotal > 0:
-            freq[letter] = round((letterCount[letter] / letterTotal) * 100,3)
+            freq[letter] = (letterCount[letter] / letterTotal) * 100
         else:
             freq[letter] = 0
     return freq, letterCount, letterTotal 
@@ -83,11 +87,12 @@ def getChiValue(columnFreq, columnLength):
             BChi = chi
             BShift = shift
     return BShift
-def Decrypt(cipherText, finalKey):
+
+def Decrypt(ciphertext, finalKey):
     #Shifts the ciphertext by the Final Key value, the First guess chi key, its slightly off 
     plainText = []
     keyL = len(finalKey) 
-    for i, char in enumerate(cipherText): #Traveres the entire length of the ciphertext string
+    for i, char in enumerate(ciphertext): #Traveres the entire length of the ciphertext string
         if char in LETTERS: # checks if the chr is within the letters string
             keyChar = finalKey[i % keyL] #These blocks right here, cause the aches to implement, the goal is taking the new final key, it takes the first chr of the string, and in this instance assigns it to keychar, and travels over each chr of the final key to the final ciphertext, applying the shift
             shift = LETTERS.index(keyChar) # index takes the number from that position
@@ -104,15 +109,23 @@ def englishComparison(plainText): #scores it, Higher values means closer to engl
     for word in words:
         clean = ''.join(filter(str.isalpha,word))
         if clean in engWords:
-            score += len(clean) * 10
+            score += len(clean) * 20
+
+    score += FrequencyOfMsg.EngMatchScore(text) * 20
+
+    score += FrequencyOfMsg.frequencyCorrelation(text) * 400
+
+
     for i in range(len(text) - 1):
         bigram = text[i:i+2]
         if bigram in BIGRAMS:
-            score += BIGRAMS[bigram] * 2
+            score += BIGRAMS[bigram] * 1
+
+
     for i in range(len(text) - 2):
         trigram = text[i:i+3]
         if trigram in TRIGRAMS:
-            score += TRIGRAMS[trigram] * 5
+            score += TRIGRAMS[trigram] * 6
  
 
 
@@ -124,35 +137,83 @@ def englishComparison(plainText): #scores it, Higher values means closer to engl
             act = freq[letter]
             diff = abs(exp - act)
             score +=(10 - diff) * 0.5
-    return score #Highest score is most likely, and is chosen for the closensss to bi, tri, and 100 common english words, the chi value is ALWAYS GOING TO BE THE HIGHEST SCORE INITIALLY, this just ranks the output plaintext for its englishness
-        
+    return score #Highest score is most likely, and is chosen for the closensss to bi, tri, and 100 common english words, the chi value is ALWAYS GOING TO BE THE HIGHEST SCORE INITIALLY, this just ranks the output plaintext for its 
+
+def scoreKeyReturnPlain(key, ciphertext):
+    plain = Decrypt(ciphertext, key)
+    score = englishComparison(plain)
+    return score, plain
+def topNShiftChi(columnText, n=3):
+    columnFreq,_,columnLength = getLetterCount(columnText)
+    chiList = []
+    for shift in range(26):
+        chi = 0
+        for letter_column in range(26):
+            shiftLetter = LETTERS[letter_column]
+
+            preShiftLetterColumn = (letter_column - shift) % 26
+            originLetter = LETTERS[preShiftLetterColumn]
+
+            expectedEngFreq = (engFreq[originLetter] / 100) * columnLength
+
+            observedEngFreq = (columnFreq[shiftLetter] / 100) * columnLength
+            if expectedEngFreq > 0:
+                chi += ((observedEngFreq - expectedEngFreq) ** 2) / expectedEngFreq
+        chiList.append((chi, shift))
+    top = heapq.nsmallest(n,chiList)
+    topLetters = [(LETTERS[shift], chi) for chi, shift in top]
+    return topLetters
+
+
+def searchChiValues(columns,k=3,keep=5,ciphertext=None):
+    topCanidates = []
+    for col in columns:
+        top = topNShiftChi(col,n=k)
+        topCanidates.append([letter for letter, _ in top])
+    bestResult = []
+
+    for combo in itertools.product(*topCanidates):
+        key = ''.join(combo)
+        score, plain = scoreKeyReturnPlain(key,ciphertext)
+        bestResult.append((score,key,plain))
+
+    bestResult.sort(key=lambda x: x[0],reverse=True)
+    return bestResult[:keep]
 
 def keyVariationToEng(finalKey, cipherText): 
  
-
+    ciphertext = cipherText.upper()
     bestKey = finalKey
     bestScore = englishComparison(Decrypt(cipherText, finalKey))
-
+  
     print('-'*5 + "KEY VARIATION CHECK" + '-'*5)
     print('\nInitial Chi Key:', finalKey, '\nInitial Score: ',bestScore)
     if bestScore < 100:
         print("\nScores of < 150, mean that the outputted plaintext is UNCERTAIN ")
     else: 
         print("\nHigher scores of > 150, Usually means HIGHER CERTAINTY")
+
     for i in range(len(finalKey)):
-        OGChar = finalKey[i]
+        OGChar = bestKey[i]
         OGIndex = LETTERS.index(OGChar)
-        for diff in range(-3,4):
+
+        BestLocalScore = bestScore
+        BestLocalChar = OGChar
+        
+        for diff in range(26):
          
             testIndex = (OGIndex + diff) % 26
             testChar = LETTERS[testIndex]
-            testKey = finalKey[:i] + testChar + finalKey[i+1:]
-
-            testDecrypt = Decrypt(cipherText, testKey) #it still checks variance scores, but its negligible, I have the weights above, tinkering with them, scoring certain things higher, wildly throws off the best guess, as it trys to correct to the entire list of bigrams/trigrams/words
+            
+            testKey = bestKey[:i] + testChar + bestKey[i+1:]
+            testDecrypt = Decrypt(ciphertext, testKey)
             score = englishComparison(testDecrypt)
-            if score > bestScore:
-                bestScore = score
-                bestKey = testKey
+
+            if score > BestLocalScore:
+                BestLocalScore = score
+                BestLocalChar = testChar
+        bestKey = bestKey[:i] + BestLocalChar + bestKey[i+1:]
+        bestScore = BestLocalScore
     return bestKey, round(bestScore,3)
 
 def getBestKeyDecrypt(finalKey,cipherText):
@@ -175,8 +236,8 @@ def main():
     columns = [''] * keyLength 
     for i, char in enumerate(cipherText): #separates the ciphertext into keylength spaced columns
         columns[i % keyLength] += char
-
     finalKey = ''
+    print('='*9 + 'FIRST CHI GUESS COLUMNS' + '='*9)
     for i, column in enumerate(columns):
         columnFreq, columnCount, columnTotal = getLetterCount(column)#calls the frequency function, getting a frequency per column, then putting each freq, the CHI value function per amount of blocks
         columnLength = len(column)
@@ -184,15 +245,45 @@ def main():
         bestShift = getChiValue(columnFreq, columnLength)#calls the chi value function, which generates a predicted Shift value IE +7, +10 etc, based on the lowest chi value
         keyLetter = LETTERS[bestShift] # the best shift character is added from the chr location on the LETTERS string, when accessed like a dictonary, it already segments each of the values into a array location
         finalKey += keyLetter           # IE if the chi value is low for a block shift of A -> D, like the Best key shift of that is 4, appends location 4 in the letters array, to the final key.
+       
         print("Column: " + str(i+1) + ', length = ' + str(columnLength) + ', Guessed KeyLetter = ' + str(keyLetter))
 
     plainText = Decrypt(cipherText, finalKey) #calls the decrypt function which shifts the ciphertext by the shift
+    ###############################################################
+    print('>'*9+'HIGHEST RATED CHI SHIFTS PER COLUMN'+'<'*9)
+    for i, column in enumerate(columns):
+        top = topNShiftChi(column, n=3)
+        formatted = [f"({letter}, {round(chi, 1)})" for letter, chi in top]
+        print(f"Column {i+1} top shifts: {', '.join(formatted)}")
+ 
+
+
+
+
+
+
+
+
+    bestCanidates = searchChiValues(columns,k=3,keep=6,ciphertext=cipherText)
+    print('-'*9+'')
+    print('ALTERS OTHER KEY LETTERS AROUND CHI GUESS, SCORES FULL PLAIN ALTERATION :')
+    for s,k,p in bestCanidates:
+        print("score:",round(s,1),"key:",k,"plain:",p[40:])
+
+
+
+##############################################################################
 
     print('\nGuessed Plain: ' + plainText + '\nGuessed Chi Key: ' + finalKey) #is the chi guess, with smaller samples, can be wrong, made a veriance checker which is called next
 
     bestKey, bestDecrypt = getBestKeyDecrypt(finalKey, cipherText) # 
 
     print('\nScored Guess Key:', bestKey, '\nBest PlainText: ', bestDecrypt)
+    
+    print('Brute force for %s? Y/N' % (keyLength))
+    # response = input('> ').upper()
+    # if response == Y:
+
 
     
 
