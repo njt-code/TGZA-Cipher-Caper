@@ -7,8 +7,22 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VigreneteDecrypt.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\crackVigrenere.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:crackVigrenere.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\detectEnglish.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:detectEnglish.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\vigenereHacker.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ColumnarProg.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\brend\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\freqAnalysis.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +36,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ColumnarProg.py",
               "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py",
               "RelativeDocumentMoniker": "ColumnarProg.py",
               "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\ColumnarProg.py",
               "RelativeToolTip": "ColumnarProg.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-30T23:08:16.843Z",
+              "WhenOpened": "2025-11-04T04:35:44.92Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +55,59 @@
               "RelativeDocumentMoniker": "VigreneteDecrypt.py",
               "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\VigreneteDecrypt.py",
               "RelativeToolTip": "VigreneteDecrypt.py",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAI0AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAOsAAAAAAAAAAAASwAQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-10-29T18:34:29.01Z",
+              "WhenOpened": "2025-11-04T03:08:34.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "freqAnalysis.py",
+              "DocumentMoniker": "C:\\Users\\brend\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\freqAnalysis.py",
+              "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\freqAnalysis.py",
+              "ToolTip": "C:\\Users\\brend\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\freqAnalysis.py",
+              "RelativeToolTip": "..\\..\\..\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\freqAnalysis.py",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T02:59:20.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "vigenereHacker.py",
+              "DocumentMoniker": "C:\\Users\\brend\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\vigenereHacker.py",
+              "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\vigenereHacker.py",
+              "ToolTip": "C:\\Users\\brend\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\vigenereHacker.py",
+              "RelativeToolTip": "..\\..\\..\\Downloads\\CrackingCodesFiles\\CrackingCodesFiles\\vigenereHacker.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T04:03:04.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "detectEnglish.py",
+              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\detectEnglish.py",
+              "RelativeDocumentMoniker": "detectEnglish.py",
+              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\detectEnglish.py",
+              "RelativeToolTip": "detectEnglish.py",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T01:00:24.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "crackVigrenere.py",
+              "DocumentMoniker": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\crackVigrenere.py",
+              "RelativeDocumentMoniker": "crackVigrenere.py",
+              "ToolTip": "C:\\Users\\brend\\Documents\\GitHub\\TGZA-Cipher-Caper\\crackVigrenere.py",
+              "RelativeToolTip": "crackVigrenere.py",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAGQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T00:58:10.747Z",
               "EditorCaption": ""
             }
           ]
