@@ -1,0 +1,7 @@
+*.json
+*.sqlite
+/.vs
+/.vs/TGZA-Cipher-Caper/v17/.wsuo
+/.vs/slnx.sqlite
+.vs/TGZA-Cipher-Caper/v17/DocumentLayout.backup.json
+.vs/TGZA-Cipher-Caper/v17/DocumentLayout.json
